@@ -11,6 +11,8 @@ export const Cell: FC<{
   active?: boolean
   children?: any
   onClick?: () => any
+  key?: any,
+  tempData?: any
 }> = ({
   children,
   gutter,
@@ -19,10 +21,14 @@ export const Cell: FC<{
   active,
   disabled,
   className,
-  onClick
+  onClick,
+  key,
+  tempData
 }) => {
+  // console.log("Temp data => ", tempData)
   return (
     <div
+      id={`metadata-${column?.projectPropertyId}-${tempData?.uploadId}`}
       className={cx(
         'dsg-cell',
         gutter && 'dsg-cell-gutter',

@@ -72,6 +72,7 @@ const RowComponent = React.memo(
           return (
             <Cell
               key={i}
+              tempData={data}
               gutter={i === 0}
               disabled={disabled}
               stickyRight={hasStickyRightColumn && i === columns.length - 1}
