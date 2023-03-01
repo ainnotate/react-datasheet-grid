@@ -50,7 +50,8 @@ export const useColumns = <T extends any>(
       })
     }
 
-    return partialColumns.map<Column<T, any, any>>((column) => ({
+    // @ts-ignore
+      return partialColumns.map<Column<T, any, any>>((column) => ({
       ...column,
       width: column.width ?? 1,
       minWidth: column.minWidth ?? 100,
